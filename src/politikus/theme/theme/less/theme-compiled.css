@@ -6096,25 +6096,31 @@ body.template-logged_out #content-core .portletFooter {
   margin-right: 0.5rem;
 }
 /* our custom styles */
-/* line 4, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
-.custom-theme-marker {
-  display: none;
-  position: absolute;
-  top: 300px;
-  left: 30%;
-  margin: auto 0;
-  transform: rotate(-20deg);
-  background: #00ECFF;
-  color: #fff;
-  padding: 1em;
-  z-index: 100;
+/* line 3, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
+.newsImageContainer {
+  float: none;
+  border-radius: 0;
+  box-shadow: none;
 }
-/* line 16, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
-.section-front-page .custom-theme-marker {
-  display: block;
+/* line 9, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
+.newsImageContainer a {
+  width: 100%;
+}
+/* line 12, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
+.newsImageContainer a img {
+  width: 100%;
+  height: auto;
+}
+/* line 19, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
+.newsImageContainer figcaption {
+  padding: 0px 10px;
+  border-left: 1px solid;
+  margin: 10px 50px;
+  font-size: 14px;
+  font-style: italic;
 }
 /* TinyMCE templates */
-/* line 24, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
+/* line 33, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
 .image-grid-2x2 {
   padding: 0;
   margin: 0 0 30px 0;
@@ -6122,7 +6128,7 @@ body.template-logged_out #content-core .portletFooter {
   margin-left: -15px;
   margin-right: -15px;
 }
-/* line 30, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
+/* line 39, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
 .image-grid-2x2 > li {
   float: left;
   width: 100%;
@@ -6139,7 +6145,7 @@ body.template-logged_out #content-core .portletFooter {
     width: 50%;
   }
 }
-/* line 35, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
+/* line 44, http://localhost:8080/Plone3/++theme++theme-test/less/custom.less */
 .image-grid-2x2 > li img {
   max-width: 100%;
   max-height: 100%;

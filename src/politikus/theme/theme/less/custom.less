@@ -1,22 +1,29 @@
 /* our custom styles */
 
-// DELETE ME:
-.custom-theme-marker {
-    display: none;
-    position: absolute;
-    top: 300px;
-    left: 30%;
-    margin: auto 0;
-    transform: rotate(-20deg);
-    background: #00ECFF;
-    color: #fff;
-    padding: 1em;
-    z-index: 100;
-}
-.section-front-page .custom-theme-marker{
-    display: block;
-}
+.newsImageContainer {
+  float: none;
+  border-radius: 0;
+  box-shadow: none;
 
+  //Image Styling for Content
+  & a {
+    width: 100%;
+
+    & img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  //Caption styling
+  & figcaption {
+    padding: 0px 10px;
+    border-left: 1px solid;
+    margin: 10px 50px;
+    font-size: @plone-font-size-base;
+    font-style: italic;
+  }
+}
 
 /* TinyMCE templates */
 
