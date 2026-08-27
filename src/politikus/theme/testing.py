@@ -6,6 +6,7 @@ from plone.app.testing import FunctionalTesting
 from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
+from plone.testing.zope import WSGI_SERVER_FIXTURE
 
 import politikus.theme
 
@@ -36,7 +37,7 @@ POLITIKUS_THEME_INTEGRATION_TESTING = IntegrationTesting(
 
 
 POLITIKUS_THEME_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(POLITIKUS_THEME_FIXTURE,),
+    bases=(POLITIKUS_THEME_FIXTURE, WSGI_SERVER_FIXTURE),
     name='PolitikusThemeLayer:FunctionalTesting',
 )
 
