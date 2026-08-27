@@ -1,5 +1,0 @@
-===============
-politikus.theme
-===============
-
-User documentation

@@ -14,7 +14,7 @@ long_description = '\n\n'.join([
 
 setup(
     name='politikus.theme',
-    version='1.0a1',
+    version='2.0a1',
     description="Default Plone Theme for Politikus",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
@@ -57,7 +57,6 @@ setup(
         'z3c.jbot',
         'plone.api>=1.8.4',
         'plone.restapi',
-        'plone.app.dexterity',
     ],
     extras_require={
         'test': [

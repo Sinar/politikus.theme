@@ -70,6 +70,42 @@ class TestThemeApplied(unittest.TestCase):
         body = urlopen(url).read()
         self.assertIn(b'++theme++politikus-theme', body)
 
+    def test_theme_is_plone6_classic_ui(self):
+        """The theme uses the Plone 6.2 Classic UI layout and merges content."""
+        from urllib.request import urlopen
+
+        url = 'http://%s:%s/plone/' % (self.layer['host'], self.layer['port'])
+        body = urlopen(url).read()
+        # theme stylesheet is served from the theme resource
+        self.assertIn(b'++theme++politikus-theme/css/theme.css', body)
+        # Plone 6.2 barceloneta layout markers (Bootstrap 5 markup)
+        self.assertIn(b'id="portal-globalnav"', body)
+        self.assertIn(b'data-bs-toggle="offcanvas"', body)
+        self.assertIn(b'id="portal-column-content"', body)
+        # content is merged into the theme, not just the theme skeleton
+        self.assertIn(b'template-document_view', body)
+        self.assertIn(b'userrole-anonymous', body)
+        self.assertIn(b'id="visual-portal-wrapper"', body)
+        # icon links resolve inside the theme resource
+        self.assertIn(
+            b'++theme++politikus-theme/barceloneta-apple-touch-icon.png',
+            body)
+
+    def test_theme_resources_served(self):
+        """Theme css, fonts and icons are served from the theme resource."""
+        from urllib.request import urlopen
+
+        base = 'http://%s:%s/plone/++theme++politikus-theme' % (
+            self.layer['host'], self.layer['port'])
+        for path in (
+            'css/theme.css',
+            'roboto/roboto-regular.woff2',
+            'roboto/robotocondensed-light.woff',
+            'barceloneta-apple-touch-icon.png',
+        ):
+            with urlopen(base + '/' + path) as response:
+                self.assertEqual(response.status, 200, path)
+
 
 class TestUninstall(unittest.TestCase):
 

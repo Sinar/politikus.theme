@@ -1,4 +1,3 @@
 graft src/politikus
-graft docs
 include *.rst
 global-exclude *.pyc

@@ -1,39 +1,18 @@
-.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
-   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
-   This text does not appear on pypi or github. It is a comment.
-
 ===============
 politikus.theme
 ===============
 
-Tell me what your product does
+Diazo theme for the Politikus site, targeting the Plone 6.2 Classic UI.
 
-Features
---------
+The theme is based on the Plone 6.2 ``plonetheme.barceloneta`` layout
+(Bootstrap 5 markup).  ``theme/css/theme.css`` ships the barceloneta
+stylesheet with the Politikus custom styles appended at the bottom; the
+Roboto fonts (``theme/roboto/``) and the theme icons are vendored in the
+theme directory, mirroring the barceloneta layout:
 
-- Can be bullet points
-
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
-
+- ``.newsImageContainer`` — full-width news/issue images with caption styling
+- ``.image-grid-2x2`` — two-column image grid (TinyMCE template, see
+  ``theme/tinymce-templates/image-grid-2x2.html``)
 
 Installation
 ------------
@@ -47,24 +26,11 @@ Install politikus.theme by adding it to your buildout::
     eggs =
         politikus.theme
 
+and then running ``bin/buildout``.  Create or open a Plone site and enable
+the add-on from the Plone Add-ons screen; the profile installs and enables
+the theme.
 
-and then running ``bin/buildout``
-
-
-Contribute
-----------
-
-- Issue Tracker: https://github.com/collective/politikus.theme/issues
-- Source Code: https://github.com/collective/politikus.theme
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
-
+Uninstalling re-enables the stock barceloneta theme.
 
 License
 -------
